@@ -4,20 +4,24 @@
 	{%- include head.html -%}
 </head>
 <body>
-	<header class="texture-{{ site.texture.style }}">
-		<div class="container">
-			{%- include nav.html -%}
+	<div class="page-container">
+    <div class="page-content-wrap">
+			<header class="texture-{{ site.texture.style }}">
+				<div class="container">
+					{%- include nav.html -%}
+				</div>
+				{%- include header.html -%}	
+			</header>
+			<main class="page-content">
+				<div class="container">
+					{{ content }}
+				</div>
+			</main>
+			{%- include footer.html -%}
 		</div>
-		{%- include page_header.html -%}	
-	</header>
-	<main>
-		<div class="container">
-			{{ content }}
-		</div>
-	</main>
-	<footer class="texture-{{ site.texture.style }}">
-		{%- include page_footer.html -%}
-	</footer>
-	{%- include footer.html -%}
+		<footer class="texture-{{ site.texture.style }}">
+			{%- include page_footer.html -%}
+		</footer>
+	</div>
 </body>
 </html>

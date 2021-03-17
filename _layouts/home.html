@@ -10,8 +10,14 @@ layout: page
 			<a class="post-link" href="{{ post.url | relative_url }}">
 				<h2 class="post-title">{{ post.title | escape }}</h2>
 			</a>
-			<div class="post-date"><i class="icon-calendar"></i>{{ post.date | date: date_format }}</div>
 		</div>
+		{%- assign minutes_read = post.content | number_of_words | divided_by:180 -%}
+		{% if minutes_read > 1 %}
+		<div class="post-date"><p><i class="icon-calendar"></i>{{ post.date | date: '%B %d, %Y' }} • <span class="time">{{ minutes_read }}</span> minutes read</p></div>
+		{% else %}
+		<div class="post-date"><p><i class="icon-calendar"></i>{{ post.date | date: '%B %d, %Y' }} • <span class="time">{{ minutes_read }}</span> minute read</p></div>
+		{% endif %}
+
 		<div class="post">
 			{%- if site.show_excerpts -%}
 			{{ post.excerpt }}

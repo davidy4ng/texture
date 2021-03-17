@@ -34,6 +34,15 @@ a {
 	}
 }
 
+a.nostyle {
+	color: #fff;
+	text-decoration: none;
+	&:hover {
+	  text-decoration: underline;
+	  border-bottom: none;
+	}
+}
+
 
 h1, h2, h3 {
 	line-height: 1.2em;
@@ -59,6 +68,15 @@ figcaption {
 	margin-top: -1em;
 }
 
+.page-container {
+	position: relative;
+  min-height: 100vh;
+}
+
+.page-content {
+	padding-bottom: 120px;
+}
+
 header {
 	// background-size: cover;
 	padding: 120px 0;
@@ -70,6 +88,11 @@ header {
 	}
 	h1 {
 		margin: 0;
+	}
+
+	.title {
+		position: absolute;
+		top: 0;
 	}
 
 	.social {
@@ -94,6 +117,53 @@ header {
 	}
 }
 
+footer {
+	// background-size: cover;
+	margin-top: 50px;
+	padding: 20px 0;
+	color: #fff;
+	overflow: hidden;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 80px;
+
+	p {
+		margin: 0;
+	}
+
+	.copyright {
+		color: #fff;
+		float: left;
+	}
+
+	a {
+	  color: #fff;
+	}
+
+	.social {
+		overflow: hidden;
+		list-style-type: none;
+		padding: 0;
+		margin-top: 0;
+		li {
+			color: #fff;
+			float: left;
+			i {
+				&:first-child::before {
+					margin-left: 0;
+				}
+				@include fluidType(26px, 34px);
+				transition: color .3s;
+				&:hover {
+					color: $gray;
+				}
+			}
+		}
+	}
+}
+
+
 .clearfix {
 	clear: both;
 }
@@ -103,7 +173,7 @@ header {
 //
 .container {
 	margin:0 150px;
-	max-width: 720px;
+	max-width: 1080px;
 
 	div.highlighter-rouge {
 		right: 150px;
@@ -180,11 +250,12 @@ header {
 	padding: 0;
 	li {
 		float: left;
-		padding: 10px 20px;
+		padding: 0px 8px;
+		height: 32px;
 		background-color: $lightGray;
 		color: #000;
 		margin: 5px;
-		border-radius: 2px;
+		border-radius: 16px;
 		@include fluidType(15px, 17px);
 		&:first-child {
 			margin-left: 0;
@@ -235,22 +306,25 @@ header {
 		list-style-type: none;
 		li {
 			// background-color: #ff9f1c;
-			border: 1px solid #fff;
+			// border: 1px solid #fff;
 			float: left;
 			// margin: 5px;
 			&:not(:first-child){
 				border-left: 0;
 			}
 			padding: 10px 25px;
+			text-transform: uppercase;
 			// border-radius: 4px;
 			@include fluidType(15px, 17px);
-			transition: background-color .3s ease-in;
+			// transition: background-color .3s ease-in;
 			&:hover {
-				background-color: rgba(#fff, 0.15);
+				// background-color: rgba(#fff, 0.15);
 				cursor: pointer;
+				text-decoration: underline;
 			}
 			&.active {
-				background-color: rgba(#fff, 0.15);
+				// background-color: rgba(#fff, 0.15);
+				font-weight: bold;
 			}
 		}
 	}

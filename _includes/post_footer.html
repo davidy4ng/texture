@@ -1,14 +1,3 @@
 <div class="container">
-	<p class="copyright"><a href="{{ site.baseurl }}">{{ site.title }}</a> © {{ site.time | date: '%Y' }}</p>
-	<ul class="social">
-		{%- if site.texture.social_links.github -%}
-			<a href="https://github.com/{{ site.texture.social_links.github }}"><li><i class="icon-github-circled"></i></li></a>
-		{%- endif -%}
-		{%- if site.texture.social_links.linkedIn -%}
-			<a href="https://linkedin.com/{{ site.texture.social_links.linkedIn }}"><li><i class="icon-linkedin-squared"></i></li></a>
-		{%- endif -%}
-		{%- if site.texture.social_links.twitter -%}
-			<a href="https://twitter.com/{{ site.texture.social_links.twitter }}"><li><i class="icon-twitter-squared"></i></li></a>
-		{%- endif -%}
-	</ul>
+	<p class="copyright"><a href="{{ '/' | prepend:site.baseurl }}" class="nostyle">{{ site.title }}</a> © {{ site.time | date: '%Y' }}</p>
 </div>
