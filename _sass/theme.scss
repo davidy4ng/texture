@@ -118,7 +118,6 @@ header {
 }
 
 footer {
-	// background-size: cover;
 	margin-top: 50px;
 	padding: 20px 0;
 	color: #fff;
@@ -305,25 +304,18 @@ footer {
 	ul {
 		list-style-type: none;
 		li {
-			// background-color: #ff9f1c;
-			// border: 1px solid #fff;
 			float: left;
-			// margin: 5px;
 			&:not(:first-child){
 				border-left: 0;
 			}
 			padding: 10px 25px;
 			text-transform: uppercase;
-			// border-radius: 4px;
 			@include fluidType(15px, 17px);
-			// transition: background-color .3s ease-in;
 			&:hover {
-				// background-color: rgba(#fff, 0.15);
 				cursor: pointer;
 				text-decoration: underline;
 			}
 			&.active {
-				// background-color: rgba(#fff, 0.15);
 				font-weight: bold;
 			}
 		}
